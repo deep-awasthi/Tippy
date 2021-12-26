@@ -70,7 +70,7 @@
         app:layout_constraintTop_toTopOf="@+id/tvBase" />
 
     <SeekBar
-        android:id="@+id/ebTip"
+        android:id="@+id/sbTip"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:max="30"
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         tools:text="24.00"
         app:layout_constraintBottom_toBottomOf="@+id/tvTip"
-        app:layout_constraintStart_toStartOf="@+id/ebTip"
+        app:layout_constraintStart_toStartOf="@+id/sbTip"
         app:layout_constraintTop_toTopOf="@+id/tvTip" />
 
     <TextView
