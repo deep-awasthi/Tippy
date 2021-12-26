@@ -1,5 +1,6 @@
 package com.example.tippy
 
+import android.animation.ArgbEvaluator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -15,10 +16,12 @@ class MainActivity : AppCompatActivity() {
 
         sbTip.progress = 15
         tvTipPercentage.text = "15%"
+        tipDescription(15)
         sbTip.setOnSeekBarChangeListener(object:SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, progress: Int, p2: Boolean) {
                 Log.i("MainActivity", "SeekBar Change")
                 tvTipPercentage.text = "$progress%"
+                tipDescription(progress)
                 tipAndTotal()
             }
 
@@ -39,6 +42,17 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    private fun tipDescription(tipPer: Int) {
+        val tipValue: String
+        when (tipPer) {
+            in 0..9 -> tipValue = "Poor"
+            in 10..19 -> tipValue = "Good"
+            else -> tipValue = "Great"
+        }
+
+        tvTipGrade.text = tipValue
     }
 
     private fun tipAndTotal() {
