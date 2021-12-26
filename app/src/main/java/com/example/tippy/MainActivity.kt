@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) { }
 
-            override fun afterTextChanged(s: Editable?) {
+            override fun afterTextChanged(p0: Editable?) {
                 Log.i("MainActivity", "EditText Change")
                 tipAndTotal()
             }
@@ -44,12 +44,12 @@ class MainActivity : AppCompatActivity() {
     private fun tipAndTotal() {
 
         if(etBase.text.isEmpty()){
-            tvTotalAmount.text = ""
             tvTipAmount.text = ""
+            tvTotalAmount.text = ""
             return
         }
 
-        val base = etBase.text.toString().toInt()
+        val base = etBase.text.toString().toDouble()
         val tip = sbTip.progress
 
         val tipAmount = base*tip/100
