@@ -42,14 +42,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun tipAndTotal() {
+
+        if(etBase.text.isEmpty()){
+            tvTotalAmount.text = ""
+            tvTipAmount.text = ""
+            return
+        }
+
         val base = etBase.text.toString().toInt()
         val tip = sbTip.progress
 
         val tipAmount = base*tip/100
         val total = base+tipAmount
 
-        tvTipAmount.text = tipAmount.toString()
-        tvTotalAmount.text = total.toString()
+        tvTipAmount.text = "%.2f".format(tipAmount)
+        tvTotalAmount.text = "%.2f".format(total)
 
     }
 }
