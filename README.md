@@ -16,7 +16,7 @@ The following functions of the app:
 ## Screenshot
 
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/mad-skull/Tippy/blob/main/Screenshot_20211226_220136.png' />
 
 
 ## License
